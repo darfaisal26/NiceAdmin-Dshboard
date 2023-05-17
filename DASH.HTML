@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link rel="stylesheet" href="./Styles/Dash.css" /> -->
+    <link rel="stylesheet" href="/Styles/boot.css" />
+    <script
+      src="https://kit.fontawesome.com/419e789562.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="./JS/udemy.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <!-- main container -->
+
+        <!-- heading section  Mobile and Tab -->
+
+        <div class="row">
+
+                  <div class=" col-12 heading-section p-2">
+                      <div class="leftside ">
+                         <div class="logo nav-icons mx-2">
+                           <img
+                              src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/logo.png"
+                             />
+                       </div>
+
+                             <div class="svg-ic nav-icons" id="hamburger-small">
+                               <svg
+                               xmlns="http://www.w3.org/2000/svg"
+                                width="40"
+                               height="40"
+                              fill="currentColor"
+                            class="bi bi-list"
+                              viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="rightside borders">
+              <span class="span-border p-1" id="show-search">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="30"
+                  height="30"
+                  fill="#012970"
+                  class="bi bi-search"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                  />
+                </svg>
+              </span>
+
+              <span class="span-border p-1" id="noti-button" onclick="notification()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="#37568E"
+                  class="bi bi-bell"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"
+                  />
+                </svg>
+                <span class="bluedot bg-primary">4</span>
+              </span>
+
+              <span class="span-border p-1"  id="msg-button" onclick="msgNotification()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="#37568E"
+                  class="bi bi-chat-left-text"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                  />
+                  <path
+                    d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"
+                  />
+                </svg>
+                <span class="greendot bg-success">3</span>
+              </span>
+
+              <span class="img-span-bor bgsp flex" id="profile"  onclick=PopUp() >
+                <span class="">
+                  <img
+                    src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/profile-img.jpg"
+                    alt=""
+                    srcset=""
+                    style="height: 35px; width: 35px; border-radius: 50%"
+                  />
+                </span>
+                <span
+                  class="hidden block"
+                  style="color: #37568e; font-size: 14px; font-weight: 500"
+                  >K.Anderson</span
+                >
+              </span>
+            </div>
+                  </div>
+
+        </div>
+
+        <!-- heading section  Mobile and Tab  END-->
+
+        <!-- desktop header-section -->
+        <div class="row">
+          <div class="heading-section-xl p-1 ">
+            <div class="left-xl">
+              <div class="logo-xl p-2 px-2">
+                <img
+                  src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/logo.png"
+                />
+                <span class="span-logo">NiceAdmin</span>
+              </div>
+              <div class="search-xl">
+                <span class="hamburger" id="hamburger">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    fill="currentColor"
+                    class="bi bi-list mx-4 my-2"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+                    />
+                  </svg>
+                </span>
+                <div class="search-div my-2 ">
+                  <input
+                    type="search"
+                    placeholder="Search"
+                    class="search-input px-2"
+                  />
+                  <span >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="30"
+                      height="20"
+                      fill="#012970"
+                      class="bi bi-search my-2"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                      />
+                    </svg>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="right-xl">
+              <span class="span-border" id="noti-button"  onclick="notification()"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="#37568E"
+                  class="bi bi-bell"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"
+                  />
+                </svg>
+                <span class="bluedot bg-primary">4</span>
+
+              </span>
+
+           
+
+
+
+              <span class="span-border" id="msg-button" onclick="msgNotification()"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="#37568E"
+                  class="bi bi-chat-left-text"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                  />
+                  <path
+                    d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"
+                  />
+                </svg>
+                <span class="greendot bg-success">3</span>
+              </span>
+              <span class="profile-span  m-1" id="profile"  onclick=PopUp()>
+                <img
+                  src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/profile-img.jpg"
+                  alt=""
+                  srcset=""
+                  style="height: 40px; width: 40px; border-radius: 50%"
+                />
+              </span>
+              <span
+                class="span-border"
+                style="color: #37568e; font-size: 14px; font-weight: 600"
+                >K.Anderson</span
+              >
+            </div>
+          </div>
+        </div>     <!-- desktop header-section End -->
+
+             <!-- notifications    onclick event -->
+   <div class="notifications ">
+         <ul class="py-2">
+       <li class="p-2 my-2">You have 4 new notifications
+         <span class="badge rounded-pill bg-primary p-2 mx-2">view all</span>
+        </li>
+<hr>
+       <li class="first my-2 flex-li p-2">
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-exclamation-circle text-warning li-icons mx-2 my-4" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+            <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+          </svg>
+         <div class="paras" >
+           <h5>Lorem ipsum</h5>
+           <p>Quae dolorem earum veritatis oditseno</p>
+           <p>30 min.ago</p>
+          </div>
+       </li>  
+<hr>
+       
+       <li class=" second my-2 flex-li p-2">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-x-circle text-danger mx-2 my-4" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+       <div class="paras" >
+         <h5>Lorem ipsum</h5>
+         <p>Quae dolorem earum veritatis oditseno</p>
+         <p>30 min.ago</p>
+        </div>
+     </li> 
+     <hr>
+
+  <li class=" third my-2 flex-li p-2">
+
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-check-circle text-success mx-2 my-4" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+        </svg>
+       <div class="paras" >
+         <h5>Lorem ipsum</h5>
+         <p>Quae dolorem earum veritatis oditseno</p>
+         <p>30 min.ago</p>
+        </div>
+     </li>
+     <hr>
+
+     <li class="fourth my-2 flex-li p-2">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-info-circle text-primary mx-2 my-4" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+      </svg> 
+     <div class="paras" >
+       <h5>Lorem ipsum</h5>
+       <p>Quae dolorem earum veritatis oditseno</p>
+       <p>10 min.ago</p>
+      </div>
+   </li>
+
+   <hr>
+   <li class="footer-noti">
+    <span> Show all notifications</span>
+   </li>
+
+
+      </ul>
+   </div>    <!-- notifications -->
+
+             <!--  message notifications    onclick event -->
+
+             <div class=" message-notifications ">
+              <ul class="py-2">
+            <li class="p-2 my-2">You have 3 new notifications
+              <span class="badge rounded-pill bg-primary p-2 mx-2">view all</span>
+             </li>
+     <hr>
+            <li class="first flex-li ">
+     
+               <img src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/messages-1.jpg" alt="" srcset="" class="rounded-circle mx-2 my-4">
+              <div class="paras" >
+                <h5>Lorem ipsum</h5>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min.ago</p>
+               </div>
+            </li>  
+     <hr>
+
+     <li class="second  flex-li">
+     
+      <img src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/messages-2.jpg" alt="" srcset="" class="rounded-circle mx-2 my-4">
+      
+     <div class="paras">
+       <h5>Lorem ipsum</h5>
+       <p>Quae dolorem earum veritatis oditseno</p>
+       <p>8 min.ago</p>
+      </div>
+   </li>  
+<hr>
+<li class="third  flex-li">
+  <img src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/messages-3.jpg" alt="" srcset="" class="rounded-circle mx-2 my-4">
+     
+  
+ <div class="paras" >
+   <h5>Lorem ipsum</h5>
+   <p>Quae dolorem earum veritatis oditseno</p>
+   <p>40 min.ago</p>
+  </div>
+</li>  
+<hr>
+<li class="footer-noti">
+  <span> Show all notifications</span>
+ </li>
+
+     </ul>
+             
+    
+    </div>      <!--  message notifications -->
+
+
+    <!-- profile popup   onclick event  -->
+           <div class="profile-sec">
+
+              <div class="name ic-text">
+                <h3>Faisal Nazir</h3>
+                <p>Web Designer</p>
+              </div>
+              <hr>
+  <div class="ic-text">
+    <span><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person mx-2" viewBox="0 0 16 16">
+      <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+    </svg></span>
+    <span>My profile</span>
+  </div>
+  <hr>
+          
+  <div class="ic-text">
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-gear mx-2" viewBox="0 0 16 16">
+        <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+        <path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+      </svg>
+  </span>
+    <span>Account Settings</span>
+  </div>
+  <hr>
+
+  <div class="ic-text">
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-question-circle mx-2" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+      </svg>
+    </span>
+    <span>Need Help?</span>
+  </div>
+  <hr>
+
+  <div class="ic-text">
+    <span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-box-arrow-right mx-2" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+      </svg>  
+    </span>
+    <span>Sign Out</span>
+  </div>
+  <hr>
+
+
+</div>    <!-- profile popup -->
+
+  <!-- search popup -->
+
+  <div class="row bg-white  min-w"id="hide">
+    <div class="col-12">
+      <div class="input-icon">
+        <input type="search" name="" id="" placeholder="Search" class="p-1 px-4 search">
+        <span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="20"
+            class="bi bi-search my-2"
+            fill="#012970"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+            />
+          </svg>
+      </div>
+    </div>
+  </div>
+
+        <!-- grid containersection -->
+
+        <div class="grid-container">
+          <!-- side navbar section -->
+
+          <div class="sidenavbar sidenav-small" id="sidenavbar" >
+            <!-- one -->
+
+            <div class="item1">
+              <span class="side-nav-icon-spans">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="#4154F1"
+                  class="bi bi-grid"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"
+                  />
+                </svg>
+              </span>
+              <span class="side-nav-span-text">Dashboard</span>
+            </div>
+
+            <!-- two -->
+
+            <div class="items drop-items">
+              <div class="icon-and-text">
+                <span class="side-nav-icon-spans">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="#012970"
+                    class="bi bi-menu-button-wide"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v2A1.5 1.5 0 0 1 14.5 5h-13A1.5 1.5 0 0 1 0 3.5v-2zM1.5 1a.5.5 0 0 0-.5.5v2a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 0-.5-.5h-13z"
+                    />
+                    <path
+                      d="M2 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm10.823.323-.396-.396A.25.25 0 0 1 12.604 2h.792a.25.25 0 0 1 .177.427l-.396.396a.25.25 0 0 1-.354 0zM0 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V8zm1 3v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2H1zm14-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2h14zM2 8.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0 4a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"
+                    />
+                  </svg>
+                </span>
+                <span class="side-nav-span-text">Components</span>
+              </div>
+              <span class="side-dropdown">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="currentColor"
+                  class="bi bi-chevron-down"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <!-- three -->
+
+            <div class="items drop-items">
+              <div class="icon-and-text">
+                <span class="side-nav-icon-spans">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="currentColor"
+                    class="bi bi-journal-text"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"
+                    />
+                    <path
+                      d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"
+                    />
+                    <path
+                      d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"
+                    />
+                  </svg>
+                </span>
+
+                <span class="side-nav-span-text">Forms</span>
+              </div>
+
+              <span class="side-dropdown">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="currentColor"
+                  class="bi bi-chevron-down"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <!-- forth -->
+
+            <div class="items drop-items">
+              <div class="icon-and-text">
+                <span class="side-nav-icon-spans">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="currentColor"
+                    class="bi bi-layout-text-window-reverse"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M13 6.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm0 3a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z"
+                    />
+                    <path
+                      d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12zM2 1a1 1 0 0 0-1 1v1h14V2a1 1 0 0 0-1-1H2zM1 4v10a1 1 0 0 0 1 1h2V4H1zm4 0v11h9a1 1 0 0 0 1-1V4H5z"
+                    />
+                  </svg>
+                </span>
+
+                <span class="side-nav-span-text">Tables</span>
+              </div>
+
+              <span class="side-dropdown">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="currentColor"
+                  class="bi bi-chevron-down"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <!-- fifth -->
+
+            <div class="items drop-items">
+              <div class="icon-and-text">
+                <span class="side-nav-icon-spans">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="currentColor"
+                    class="bi bi-bar-chart"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M4 11H2v3h2v-3zm5-4H7v7h2V7zm5-5v12h-2V2h2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3z"
+                    />
+                  </svg>
+                </span>
+
+                <span class="side-nav-span-text">Charts</span>
+              </div>
+
+              <span class="side-dropdown">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="currentColor"
+                  class="bi bi-chevron-down"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <!-- sixth -->
+
+            <div class="items drop-items">
+              <div class="icon-and-text">
+                <span class="side-nav-icon-spans">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="currentColor"
+                    class="bi bi-gem"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6l3-4zm11.386 3.785-1.806-2.41-.776 2.413 2.582-.003zm-3.633.004.961-2.989H4.186l.963 2.995 5.704-.006zM5.47 5.495 8 13.366l2.532-7.876-5.062.005zm-1.371-.999-.78-2.422-1.818 2.425 2.598-.003zM1.499 5.5l5.113 6.817-2.192-6.82L1.5 5.5zm7.889 6.817 5.123-6.83-2.928.002-2.195 6.828z"
+                    />
+                  </svg>
+                </span>
+
+                <span class="side-nav-span-text">Icons</span>
+              </div>
+
+              <span class="side-dropdown">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="26"
+                  height="26"
+                  fill="currentColor"
+                  class="bi bi-chevron-down"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+                  />
+                </svg>
+              </span>
+            </div>
+
+            <!-- seventh -->
+
+            <!-- navheading -->
+
+            <div>
+
+              <span
+                class="mx-4"
+                style="
+                  font-size: 15px;
+                  text-transform: uppercase;
+                  color: #899bbd;
+                  font-weight: 600;
+                  margin: 10px 0 5px 15px;
+                "
+              >
+                pages
+              </span>
+            </div>
+            <!-- nav heading end -->
+
+            <!-- eighth -->
+
+            <div class="items drop-items">
+              <div class="icon-and-text">
+                <span class="side-nav-icon-spans">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="currentColor"
+                    class="bi bi-person"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"
+                    />
+                  </svg>
+                </span>
+
+                <span class="side-nav-span-text">Profile</span>
+              </div>
+            </div>
+
+            <!-- ninth -->
+
+            <div class="items drop-items">
+              <div class="icon-and-text">
+                <span class="side-nav-icon-spans">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="currentColor"
+                    class="bi bi-question-circle"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                    />
+                    <path
+                      d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"
+                    />
+                  </svg>
+                </span>
+
+                <span class="side-nav-span-text">F.A.Q</span>
+              </div>
+            </div>
+            <!-- tenth -->
+
+            <div class="items drop-items">
+              <div class="icon-and-text">
+                <span class="side-nav-icon-spans">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="currentColor"
+                    class="bi bi-envelope"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
+                    />
+                  </svg>
+                </span>
+
+                <span class="side-nav-span-text">Contact</span>
+              </div>
+            </div>
+
+            <!-- eleventh -->
+
+            <div class="items drop-items">
+              <div class="icon-and-text">
+                <span class="side-nav-icon-spans">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="currentColor"
+                    class="bi bi-card-list"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"
+                    />
+                    <path
+                      d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"
+                    />
+                  </svg>
+                </span>
+
+                <span class="side-nav-span-text">Register</span>
+              </div>
+            </div>
+            <!-- twelth -->
+
+            <div class="items drop-items">
+              <div class="icon-and-text">
+                <span class="side-nav-icon-spans">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="currentColor"
+                    class="bi bi-box-arrow-in-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+                    />
+                  </svg>
+                </span>
+
+                <span class="side-nav-span-text">Login</span>
+              </div>
+            </div>
+
+            <!-- thirteenth -->
+            <div class="items drop-items">
+              <div class="icon-and-text">
+                <span class="side-nav-icon-spans">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="currentColor"
+                    class="bi bi-dash-circle"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+                    />
+                    <path
+                      d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"
+                    />
+                  </svg>
+                </span>
+
+                <span class="side-nav-span-text">Error 404 </span>
+              </div>
+            </div>
+
+            <!-- fourteenth -->
+            <div class="items drop-items">
+              <div class="icon-and-text">
+                <span class="side-nav-icon-spans">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="26"
+                    height="26"
+                    fill="currentColor"
+                    class="bi bi-file-earmark"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"
+                    />
+                  </svg>
+                </span>
+
+                <span class="side-nav-span-text">Blank</span>
+              </div>
+            </div>
+
+            <!-- side navbar section END -->
+          </div>    <!-- side navbar section END -->
+
+          <div class="dashboard-nav" id="dash-nav">
+            <h4 class="my-1 text">Dashboard</h4>
+            <div class="dash-spans bor my-1">
+              <span>Home</span>
+              <span>/</span>
+              <span class="dash-last-span">Dashboard</span>
+            </div>
+          </div>    <!-- end dashboard -->
+
+          <!-- mobile-main-cards and items -->
+
+          <div class="mobile-main-cards " id="main-cards">
+            <div>  
+              <div class="short3 py-2 px-2">
+                <!-- first  second third -->
+                <div class="card grid py-4 px-2">
+                  <div class="top-title flex-title-top p-2">
+                    <div class="title-spans mx-3">
+                      <spans class="t-span-1">Sales</spans>
+                      <spans class="t-span-2">|</spans>
+                      <spans class="t-span-3">Today</spans>
+                    </div>
+
+                    <div class="dot-icons mx-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="#899bbd"
+                        class="bi bi-three-dots"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="bot-title flex-title-bot p-2">
+                    <div class="left-icons mx-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="30"
+                        fill="currentColor"
+                        class="bi bi-cart"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="num-percent">
+                      <h6 class="mx-2">145</h6>
+                      <span class="mx-2 text-success" style="font-weight: 700"
+                        >12%</span
+                      >
+
+                      <span class="text" style="color: #899bbd">increase</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card grid py-4 px-2">
+                  <div class="top-title flex-title-top p-2">
+                    <div class="title-spans mx-3">
+                      <spans class="t-span-1">Revenue</spans>
+                      <spans class="t-span-2">|</spans>
+                      <spans class="t-span-3">This Month</spans>
+                    </div>
+
+                    <div class="dot-icons mx-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="#899bbd"
+                        class="bi bi-three-dots"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="bot-title flex-title-bot p-2">
+                    <div class="left-icons mx-3" style="background: #e0f8e9">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="30"
+                        fill="#2eca6a"
+                        class="bi bi-currency-dollar"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="num-percent">
+                      <h6 class="mx-2">$3,264</h6>
+                      <span
+                        class="percent mx-2 text-success"
+                        style="font-weight: 700"
+                        >8%</span
+                      >
+
+                      <span class="text" style="color: #899bbd">increase</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card grid py-4 px-2 item3">
+                  <div class="top-title flex-title-top p-2">
+                    <div class="title-spans mx-3">
+                      <spans class="t-span-1">Customers</spans>
+                      <spans class="t-span-2">|</spans>
+                      <spans class="t-span-3">This year</spans>
+                    </div>
+
+                    <div class="dot-icons mx-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="#899bbd"
+                        class="bi bi-three-dots"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="bot-title flex-title-bot p-2">
+                    <div class="left-icons mx-3" style="background: #ffecdf">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="30"
+                        height="30"
+                        fill=" #ff771d"
+                        class="bi bi-people"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"
+                        />
+                      </svg>
+                    </div>
+                    <div class="num-percent">
+                      <h6 class="mx-2">1244</h6>
+                      <span
+                        class="percent mx-2 text-danger"
+                        style="font-weight: 700"
+                        >12%</span
+                      >
+
+                      <span class="text" style="color: #899bbd">decrease</span>
+                    </div>
+                  </div>
+                </div>
+              </div>     <!-- first secpnd third -->
+
+              <!-- 4 5 6  -->
+
+              <div class="medium3 px-2 my-2">
+                <div class="card grid px-2 py-4 my-4 allcards">
+                  <img class="full" src="abc.svg" alt="" />
+                </div>
+
+                <div class="card grid px-2 py-4 my-4 allcards">
+                  <div class="top-title flex-top p-2">
+                    <div class="title-spans mx-2">
+                      <spans class="t-span-1">Recent Sales</spans>
+                      <spans class="t-span-2">|</spans>
+                      <spans class="t-span-3">Today</spans>
+                    </div>
+
+                    <div class="dot-icons mx-3">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="#899bbd"
+                        class="bi bi-three-dots"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div class="searchentry">
+                    <div class="datatable-top">
+                      <div class="datatable-dropdown">
+                        <label>
+                          <select
+                            class="datatable-selector"
+                            style="border: 2px solid rgb(11, 11, 11)"
+                          >
+                            <option value="5">5</option>
+                            <option value="10" selected="">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                          </select>
+                          <span style="font-size: 1rem"> entries per page</span>
+                        </label>
+                      </div>
+                      <div class="datatable-search search-bord">
+                        <input
+                          class="datatable-input"
+                          placeholder="Search..."
+                          type="search"
+                          title="Search within table"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- table div start -->
+                  <div class="tbl">
+                    <table
+                      id="example"
+                      class="table table-borderless tb-border"
+                      style="width: 100%"
+                    >
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Customer</th>
+                          <th>product</th>
+                          <th>price</th>
+                          <th>status</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="text-primary">#2644</td>
+                          <td>System Architect</td>
+                          <td class="text-primary">Edinburgh</td>
+                          <td>$64</td>
+                          <td>
+                            <button type="button" class="btn btn-success badge">
+                              Approved
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-primary">#2644</td>
+                          <td>Accountant</td>
+                          <td class="text-primary">Tokyo</td>
+                          <td>$47</td>
+                          <td>
+                            <button type="button" class="btn btn-warning badge">
+                              Pending
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-primary">#2604</td>
+                          <td>Junior Technical Author</td>
+                          <td class="text-primary">San Francisco</td>
+                          <td>$147</td>
+                          <td>
+                            <button type="button" class="btn btn-success badge">
+                              Approved
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-primary">#2644</td>
+                          <td>Senior Javascript Developer</td>
+                          <td class="text-primary">Edinburgh</td>
+                          <td>$145</td>
+                          <td>
+                            <button type="button" class="btn btn-danger badge">
+                              Rejected
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="text-primary">#2677</td>
+                          <td>Senior Javascript Developer</td>
+                          <td class="text-primary">Edinburgh</td>
+                          <td>$67</td>
+                          <td>
+                            <button
+                              type="button"
+                              class="btn btn-success fw-bold badge"
+                            >
+                              Approved
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- table div end -->
+
+                  <div class="footer">Showing 1 to 5 of 5 entries</div>
+                </div>
+
+                <div class="card grid py-4 px-2 allcards">
+                  <div class="top-title flex-top py-4">
+                    <div class="title-spans mx-2">
+                      <spans class="t-span-1">Top Selling</spans>
+                      <spans class="t-span-2">|</spans>
+                      <spans class="t-span-3">Today</spans>
+                    </div>
+
+                    <div class="dot-icons mx-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="#899bbd"
+                        class="bi bi-three-dots"
+                        viewBox="0 0 16 16"
+                      >
+                        <path
+                          d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="row table-section py-2">
+                    <div class="col">
+                      <table class="table">
+                        <thead class="table-light">
+                          <tr>
+                            <th>Preview</th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Sold</th>
+                            <th>Revenue</th>
+                          </tr>
+                        </thead>
+                        <tbody class="">
+                          <tr>
+                            <th scope="row">
+                              <img
+                                style="height: 60px; width: 60px"
+                                src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/product-1.jpg"
+                                alt=""
+                                srcset=""
+                              />
+                            </th>
+                            <td class="text-primary fw-bold">
+                              Ut inventore ipsa voluptas nulla
+                            </td>
+                            <td>$64</td>
+                            <td class="fw-bold">124</td>
+                            <td>$5,828</td>
+                          </tr>
+                          <tr>
+                            <th>
+                              <img
+                                style="height: 60px; width: 60px"
+                                src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/product-2.jpg"
+                                alt=""
+                                srcset=""
+                              />
+                            </th>
+                            <td class="text-primary fw-bold">
+                              Exercitationem similique doloremque
+                            </td>
+                            <td>$46</td>
+                            <td class="fw-bold">98</td>
+                            <td>$4,508</td>
+                          </tr>
+                          <tr>
+                            <th>
+                              <img
+                                style="height: 60px; width: 60px"
+                                src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/product-3.jpg"
+                                alt=""
+                                srcset=""
+                              />
+                            </th>
+                            <td class="text-primary fw-bold">
+                              Doloribus nisi exercitationem
+                            </td>
+                            <td>$59</td>
+                            <td class="fw-bold">74</td>
+                            <td>$4,366</td>
+                          </tr>
+                          <tr>
+                            <th>
+                              <img
+                                style="height: 60px; width: 60px"
+                                src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/product-4.jpg"
+                                alt=""
+                                srcset=""
+                              />
+                            </th>
+                            <td class="text-primary fw-bold">
+                              Officiis quaerat sint rerum error
+                            </td>
+                            <td>$32</td>
+                            <td class="fw-bold">63</td>
+                            <td>$2,016</td>
+                          </tr>
+                          <tr>
+                            <th>
+                              <img
+                                style="height: 60px; width: 60px"
+                                src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/product-5.jpg"
+                                alt=""
+                                srcset=""
+                              />
+                            </th>
+                            <td class="text-primary fw-bold">
+                              Sit unde debitis delectus repellendus
+                            </td>
+                            <td>$79</td>
+                            <td class="fw-bold">41</td>
+                            <td>$3,239</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>     <!-- 4 5 6  -->
+
+            </div>
+
+            <!-- 7 8 9 10  -->
+
+            <div class="long4 px-2 mx-2">
+
+              <div class="card grid px-2 py-4 my-2 ac-card">
+     
+                <div class="title-sec">
+
+                  <h5 class="card-title">
+                    Recent Activity
+                    <span>| Today</span>
+                  </h5>
+                  
+                  <div class="dot-ic my-3 mx-2">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#899bbd"
+                    class="bi bi-three-dots"
+                    viewBox="0 0 16 16"
+                    >
+                    <path
+                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                    />
+                  </svg>
+                  
+                </div>
+
+              </div>
+     
+              <div class="activity">
+
+                <div class="activity-item my-2 ">
+                  <div class="label mx-2">32 min</div>
+                  <span class="mx-1" style="height:15px; width:15px;background-color: green; border-radius: 50%; z-index: 50;">
+                    </span>
+                  <div class="activity-text">Lorem, doluoi ipsum dolor.</div>
+                </div>
+
+                  <div class="activity-item my-2 ">
+                    <div class="label mx-2">56 min</div>
+                    <span class="mx-1" style="height:15px; width:15px;background-color:red; border-radius: 50%; z-index: 50;">
+                      </span>
+                    <div class="activity-text"> volui blanditis lorem iosum</div>
+                  </div>
+                  <div class="activity-item my-2 ">
+                    <div class="label mx-2">2 hrs</div>
+                    <span class="mx-1" style="height:15px; width:15px;background-color:rgb(66, 69, 245); border-radius: 50%; z-index: 50;">
+                      </span>
+                    <div class="activity-text"> blanditis voli lorem iosum</div>
+                  </div>
+                  <div class="activity-item my-2">
+                    <div class="label mx-2">1 day</div>
+                    <span class="mx-1" style="height:15px; width:15px;background-color:rgb(54, 200, 229); border-radius: 50%; z-index: 50;">
+                      </span>
+                    <div class="activity-text"> dolor sit amet. iosum</div>
+                  </div>
+                  <div class="activity-item my-2">
+                    <div class="label mx-2">2 days</div>
+                    <span class="mx-1" style="height:15px; width:15px;background-color:rgb(245, 242, 53); border-radius: 50%; z-index: 50;">
+                      </span>
+                    <div class="activity-text"> Estggh volui blm iosum</div>
+                  </div>
+                  <div class="activity-item my-2">
+                    <div class="label mx-2">4 weeks</div>
+                    <span class="mx-1 " style="height:15px; width:15px;background-color:rgb(83, 82, 82); border-radius: 50%; z-index: 50;">
+                      </span>
+                    <div class="activity-text"> dicta tablatis lorem iosum</div>
+                  </div>
+
+                </div>
+              </div>              
+              
+              <div class="card grid px-2 py-4 my-2 ">
+                <div class="top-title flex-top py-4">
+                  <div class="title-spans mx-2">
+                    <span class="t-span-1">Budget Report </span>
+                    <span class="t-span-2">|</span>
+                    <span class="t-span-3">This Month</span>
+                  </div>
+                  
+                  <div class="dot-icons mx-2">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="#899bbd"
+                    class="bi bi-three-dots"
+                    viewBox="0 0 16 16"
+                    >
+                    <path
+                    d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+ <div class="card grid px-2 py-4 my-2 ">
+
+
+            <div class="title-sec">
+                <h5 class="card-title tx-color">
+                  Website Traffic
+                  <span class="sp-color">| Today</span>
+                </h5>
+                
+                <div class="dot-ic my-3 mx-2">
+                  <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="#899bbd"
+                  class="bi bi-three-dots"
+                  viewBox="0 0 16 16"
+                  >
+                  <path
+                  d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                  />
+                </svg>
+              </div>
+          </div>
+          <div class="body-c">
+
+            <div class="container">
+              <div class="circular-progress">
+                <span class="progress-value">0%</span>
+              </div>
+              <span class="text">Html & css</span>
+            </div>
+          </div>
+
+</div>
+           
+
+
+            <!-- end -->
+            <div class="card grid px-2 py-4 my-2 ">
+               
+              <div class="title-sec">
+
+                <h5 class="card-title tx-color">
+                  News & Update
+                  <span class="sp-color">| Today</span>
+                </h5>
+                
+                <div class="dot-ic my-3 mx-2">
+                  <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="#899bbd"
+                  class="bi bi-three-dots"
+                  viewBox="0 0 16 16"
+                  >
+                  <path
+                  d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"
+                  />
+                </svg>
+                
+              </div>
+
+            </div>
+   
+   <div class="news">
+
+    <div class="news-items">
+      <img class="ig" src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/news-1.jpg" alt="">
+      <div class="side-h4-p mx-2 my-1 py-2">
+        <h4 class="mx-4"> FAISAL NAZIR DAR</h4>
+        <p class="mx-4 py-2">Lorem ipsum, Lorem ipsum dolor sit amet.
+          
+          Lorem ipsum dolor sit.</p>
+      </div>
+    </div>
+    
+    <div class="news-items">
+      <img src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/news-2.jpg" alt="">
+      <div class="side-h4-p mx-2 my-1 py-2">
+        <h4 class="mx-4"> DAnish billi </h4>
+        <p class="mx-4 py-2">Lorem ipsum, Lorem ipsum dolor sit amet.
+           coning Lorem ipsum dolor sit.</p>
+      </div>
+    </div>
+    
+
+    <div class="news-items">
+      <img src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/news-3.jpg" alt="">
+      <div class="side-h4-p mx-2 my-1 py-2">
+        <h4 class="mx-4"> Tanverr panday</h4>
+        <p class="mx-4 py-2">Lorem ipsum, Lorem ipsum dolor sit amet.
+           dolor sg.
+          Lorem ipsum dolor sit.</p>
+      </div>
+</div>
+
+      <div class="news-items">
+      <img src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/news-4.jpg" alt="">
+      <div class="side-h4-p mx-2 my-1 py-2">
+        <h4 class="mx-4"> Lorem, ipsum.</h4>
+        <p class="mx-4 py-2">Lorr sit amet.
+           dolor sit amet consectetur adipisicing.
+          Lorem ipsum dolor sit.</p>
+      </div>
+    </div>
+
+    <div class="news-items">
+           <img src="https://bootstrapmade.com/demo/templates/NiceAdmin/assets/img/news-5.jpg" alt="">
+             <div class="side-h4-p mx-2 my-1 py-2">
+              <h4 class="mx-4">Lorem.</h4>
+              <p class="mx-4 py-2">Lorem ipipsum dolor sit amet.
+              dolor sit amet con
+             Lorem ipsum dolor sit.</p>
+             </div>
+       </div>
+</div>
+      </div><!-- 7 8 9 10  -->
+
+
+
+          </div>   <!-- mobile-main-cards end -->
+
+
+        </div>  <!-- grid-container -->
+
+     
+</main>
+    <!-- <script src="./JS/Dash.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,138 @@
+ .container-fluid{
+    /* border:2px solid red; */
+    /* height:100v; */
+    background-color:#EEF3FB ;
+}
+ .row{
+   
+    background-color:white;
+    position: relative;
+    /* border:2px solid rgb(11, 190, 190); */
+} 
+
+.toggle-div{
+    height:30px;
+    width:40px;
+    /* border:1px solid black; */
+}
+.line{
+    width:30px;
+    border:2px solid red;
+    
+}
+.flex{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+/* .borders{
+  border:1px solid red;
+} */
+
+#searchtag{
+    display:none;
+    position: absolute;
+    top:50px;
+}
+.search{
+    width:90%;
+    background-color: rgb(234, 241, 241);
+    border:2px solid red;
+    height:12%;  
+}
+
+
+
+/* sidenavbar section */
+
+/* .col,.col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-9,.col-10,.col-11,.col-12{
+    border:2px solid red;
+
+} */
+.visibility{
+    display: none;
+    position: absolute;
+    top:50px;
+}
+.span-size-1{
+    color:#012987;
+    font-size: 24px;
+    font-weight: 600;
+
+}
+.span-size-2{
+    color:#949BBD;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.card{
+    height:25%;
+    display: flex;
+    gap:2rem;
+    flex-direction: column;
+    border-radius: 2%;
+    border:none;
+    
+    
+
+}
+.inner-sections{
+    display: flex;
+    padding:2px 10px;
+    margin:2px 10px;
+    justify-content: space-between;
+    /* border:2px solid green; */
+    
+}
+.icon-span{
+    height:60px;
+    width: 60px;
+    border-radius: 50%;
+    /* position: relative; */
+    display: grid;
+    place-items: center;
+}
+.number-sec{
+    width:70%;
+    margin:2px 10px;
+    /* border: 2px solid red; */
+}
+.number-sec h6{
+    color:#012970;
+    font-weight: 700;
+    font-weight: 28px;
+}
+.card-spans-percent{
+    color:#198754;
+    font-size: 1.2rem;
+    font-weight: 700;
+    
+}
+.cart-span{
+    background-color: #F6F6FE;
+
+}
+.dolar-icon{
+    color:green 
+}
+.dolar-span{
+background-color: #E0F8E9;
+}
+.red-color{
+    color:#DC4B51;
+}
+.user-span{
+background-color: #FFECDF;
+
+}
+.user-icn{
+    color:#FF771D;
+}
+
+/* second section */
+.second-grid-section{
+    height:100%;
+    width:100%;
+    border:2px solid red;
+} 
